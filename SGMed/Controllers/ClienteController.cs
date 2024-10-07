@@ -37,16 +37,16 @@ namespace SGMed.Controllers
         // POST: ClienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ClienteModel Cliente)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                _bd.Tb_Cliente.Add(Cliente);
+                _bd.SaveChanges();
+
+                return RedirectToAction("Home"); 
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: ClienteController/Edit/5
