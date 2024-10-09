@@ -44,51 +44,79 @@ namespace SGMed.Controllers
                 _bd.Tb_Cliente.Add(Cliente);
                 _bd.SaveChanges();
 
-                return RedirectToAction("Home"); 
+                return RedirectToAction("Index"); 
             }
             return View();
         }
 
         // GET: ClienteController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            ClienteModel Cliente = _bd.Tb_Cliente.FirstOrDefault(c => c.IdCliente == id);
+
+            if (Cliente == null);
+
+            return View(Cliente);
         }
 
         // POST: ClienteController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(ClienteModel oCliente)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                var oClienteDb = _bd.Tb_Cliente.Find(oCliente.IdCliente);
+
+                oClienteDb.NomeCompleto = oCliente.NomeCompleto;
+                oClienteDb.DataNascimento = oCliente.DataNascimento;
+                oClienteDb.CPF = oCliente.CPF;
+                oClienteDb.EnderecoCliente = oCliente.EnderecoCliente;
+
+                _bd.Tb_Cliente.Update(oClienteDb);
+                _bd.SaveChanges();
+
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: ClienteController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            ClienteModel cliente = _bd.Tb_Cliente.FirstOrDefault(x => x.IdCliente == id);
+
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return View(cliente);
         }
 
         // POST: ClienteController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(ClienteModel oCliente)
         {
-            try
+            if (oCliente == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
+
+            _bd.Tb_Cliente.Remove(oCliente);
+            _bd.SaveChanges();
+            return RedirectToAction("index");
         }
     }
 }
