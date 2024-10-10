@@ -4,14 +4,14 @@
     ViewData["Title"] = "View";
 }
 
-<h1>View</h1>
+<h1>Empresas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-outline-success" asp-action="Create">Adicionar</a>
 </p>
-<table class="table">
+<table class="table" style="background-color:#1FAF9E">
     <thead>
-        <tr>
+        <tr style="color:white">
             <th>
                 @Html.DisplayNameFor(model => model.NomeEmpresa)
             </th>
@@ -24,7 +24,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="color:white">
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -36,10 +36,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EnderecoEmpresa)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdEmpresa">Edit</a> |
+            <td>                
+
+                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.IdEmpresa">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.IdEmpresa">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdEmpresa">Delete</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.IdEmpresa">Delete</a>
             </td>
         </tr>
 }

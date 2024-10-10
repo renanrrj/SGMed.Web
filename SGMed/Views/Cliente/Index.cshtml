@@ -4,15 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Clientes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-outline-success" asp-action="Create">Adicionar</a>
 </p>
-<table class="table">
+
+<div >
+    <table class="table" style="background-color:#1FAF9E">
     <thead>
-        <tr>
-            <th>
+            <tr style="color:white">
+                <th >
                 @Html.DisplayNameFor(model => model.NomeCompleto)
             </th>
             <th>
@@ -27,7 +29,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="color:white">
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -43,11 +45,14 @@
                 @Html.DisplayFor(modelItem => item.EnderecoCliente)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdCliente">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdCliente">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdCliente">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.IdCliente" class="btn btn-warning" <i class="bi bi-pencil-square"></i>Editar</a>
+
+
+                        <a class="btn btn btn-primary" asp-action="Details" asp-route-id="@item.IdCliente"> <i class="bi bi-pencil-square"></i>Detalhes</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdCliente"<i class="bi bi-pencil-square"></i>Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>
