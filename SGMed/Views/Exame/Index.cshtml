@@ -7,7 +7,7 @@
 <h1>Exames</h1>
 
 <p>
-    <a asp-action="Create">Adicionar</a>
+    <a class="btn btn-success" asp-action="Create">Adicionar</a>
 </p>
 <table class="table" style="background-color:#1FAF9E">
     <thead>
@@ -18,16 +18,16 @@
             <th></th>
         </tr>
     </thead>
-    <tbody style="color:white">
+    <tbody style="color:#FFFFFF">
 @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.DescricaoExame)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdExame">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdExame">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdExame">Delete</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IdExame">Edit</a> |
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.IdExame">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdExame">Delete</a>
             </td>
         </tr>
 }
