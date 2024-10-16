@@ -18,12 +18,16 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">                                           
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Consulta" asp-action="CreateConsulta">Consulta</a>
-                        </li>
-                        
+                    <ul class="navbar-nav flex-grow-1">                       
+
+                        <div class="dropdown">
+                            <a class="nav-link text-white" role="button" data-bs-toggle="dropdown" > Atendimento</a>
+                            <ul class="dropdown-menu" style="background-color:#1FAF9E">
+                                <li><a class="dropdown-item text-white" asp-controller="" asp-action="">Admissional</a></li>
+                                <li><a class="dropdown-item text-white" asp-controller="Atendimento" asp-action="CreateAtendimento">Consulta</a></li>
+                                <li><a class="dropdown-item text-white" asp-controller="" asp-action="">Demissional</a></li>
+                            </ul>
+                        </div>                        
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Cliente" asp-action="Index">Clientes</a>
                         </li>
@@ -32,13 +36,16 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Exame" asp-action="Index">Exames</a>
+                        </li>     
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Atendimento" asp-action="Testes">Testes</a>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

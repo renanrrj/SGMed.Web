@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SGMed.Models.ClienteModel>
+
+
+@{
+    ViewData["Title"] = "Atendimento";
+}
+
+<p>
+    <a class="btn btn-success" asp-controller="Cliente" asp-action="Create">Adicionar</a>
+</p>
+
+@* ------------ *@
+
+<label for="exampleDataList" class="form-label">Datalist example</label>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+<datalist id="datalistOptions">
+
+    <tbody>
+
+        @if (Model != null)
+        {
+            @foreach (var c in Model) // para cada item dentro desse model "emprestimo"
+            {
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="row">
+                                @c.NomeCompleto/th>
+
+                                <a class="btn btn-outline-warning" asp-controller="Emprestimos" asp-action="Editar" asp-route-id="@c.IdCliente"> <i class="bi bi-pencil-square mx-2"></i> Editar</a>
+                                <a class="btn btn-outline-danger" asp-controller="Emprestimos" asp-action="Excluir" asp-route-id="@c.IdCliente"> <i class="bi bi-trash3 mx-2"></i> Excluir</a>
+                                
+                        </tr>
+                    </thead>
+                </table>
+            }
+
+        }
+
+    </tbody>
+
+</datalist>
+@* ------------ *@
