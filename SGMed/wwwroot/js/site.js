@@ -1,39 +1,57 @@
-﻿$(document).ready(function () {
-
-    $('#Emprestimos').DataTable({
-
-        language:
-        {
-            "decimal": "",
-            "emptyTable": "No data available in table",
-            "info": "Mostrando _START_ de _END_ em um total de _TOTAL_ entradas",
-            "infoEmpty": "Showing 0 to 0 of 0 entries",
-            "infoFiltered": "(filtered from _MAX_ total entries)",
-            "infoPostFix": "",
-            "thousands": ",",
-            "lengthMenu": "Mostrar _MENU_ entradas",
-            "loadingRecords": "Loading...",
-            "processing": "",
-            "search": "Procurar:",
-            "zeroRecords": "No matching records found",
-            "paginate": {
-                "first": "Primeiro",
-                "last": "Último",
-                "next": "Próximo",
-                "previous": "Anterior"
-            },
-            "aria": {
-                "sortAscending": ": activate to sort column ascending",
-                "sortDescending": ": activate to sort column descending"
-            }
+﻿$('#tblcliente').DataTable({
+    "ordering": true,
+    "paging": true,
+    "searching": true,
+    "oLanguage": {
+        "sEmptyTable": "Nenhum registro encontrado na tabela",
+        "sInfo": "Mostrar _START_ até _END_ de _TOTAL_ registros",
+        "sInfoEmpty": "Mostrar 0 até 0 de 0 Registros",
+        "sInfoFiltered": "(Filtrar de _MAX_ total registros)",
+        "sInfoPostFix": "",
+        "sInfoThousands": ".",
+        "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+        "sLoadingRecords": "Carregando...",
+        "sProcessing": "Processando...",
+        "sZeroRecords": "Nenhum registro encontrado",
+        "sSearch": "Pesquisar",
+        "oPaginate": {
+            "sNext": "Proximo",
+            "sPrevious": "Anterior",
+            "sFirst": "Primeiro",
+            "sLast": "Ultimo"
+        },
+        "oAria": {
+            "sSortAscending": ": Ordenar colunas de forma ascendente",
+            "sSortDescending": ": Ordenar colunas de forma descendente"
         }
+    }
+});
 
-    });
-
-    setTimeout(function () { /*Tempo da mensagem de alerta*/
-        $(".alert").fadeOut("slow", function () {
-            $(this).alert('close');
-        })
-    }, 1000)
-
+$('#tblemp').DataTable({
+    "ordering": true,
+    "paging": true,
+    "searching": true,
+    "oLanguage": {
+        "sEmptyTable": "Nenhum registro encontrado na tabela",
+        "sInfo": "Mostrar _START_ até _END_ de _TOTAL_ registros",
+        "sInfoEmpty": "Mostrar 0 até 0 de 0 Registros",
+        "sInfoFiltered": "(Filtrar de _MAX_ total registros)",
+        "sInfoPostFix": "",
+        "sInfoThousands": ".",
+        "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+        "sLoadingRecords": "Carregando...",
+        "sProcessing": "Processando...",
+        "sZeroRecords": "Nenhum registro encontrado",
+        "sSearch": "Pesquisar",
+        "oPaginate": {
+            "sNext": "Proximo",
+            "sPrevious": "Anterior",
+            "sFirst": "Primeiro",
+            "sLast": "Ultimo"
+        },
+        "oAria": {
+            "sSortAscending": ": Ordenar colunas de forma ascendente",
+            "sSortDescending": ": Ordenar colunas de forma descendente"
+        }
+    }
 });

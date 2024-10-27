@@ -12,47 +12,4 @@
 
 @* ------------ *@
 
-<label for="exampleDataList" class="form-label">Busque pelo nome</label>
-<input class="form-control" list="datalistOptions" placeholder="Digite seu nome">
-<datalist id="datalistOptions">
-
-    <table class="table" style="background-color:#1FAF9E">
-        <thead>
-            <tr style="color:white">
-                <th>
-                    @Html.DisplayNameFor(model => model.NomeCompleto)
-                </th>
-                
-                <th></th>
-            </tr>
-        </thead>
-        <tbody style="color:#FFFFFF">
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(Model => item.NomeCompleto)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(Model => item.DataNascimento)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(Model => item.CPF)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EnderecoCliente)
-                    </td>
-                    <td>
-                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IdCliente"> Editar</a>
-
-                        <a class="btn btn btn-primary" asp-action="Details" asp-route-id="@item.IdCliente">  Detalhes</a>
-
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdCliente"> Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-</datalist>
 @* ------------ *@
