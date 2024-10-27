@@ -15,7 +15,7 @@ namespace SGMed.Controllers
         }
 
         // GET: EmpresaController -------------------------
-        public ActionResult Index()
+        public ActionResult IndexEmpresa()
         {
             IEnumerable<EmpresaModel> Empresa = _bd.Tb_Empresa;
             return View(Empresa);

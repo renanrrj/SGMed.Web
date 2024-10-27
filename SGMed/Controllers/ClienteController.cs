@@ -15,7 +15,7 @@ namespace SGMed.Controllers
         }
 
         // GET: ClienteController
-        public ActionResult Index()
+        public ActionResult IndexCliente()
         {
             IEnumerable<ClienteModel> Cliente = _bd.Tb_Cliente;
             return View(Cliente);
@@ -44,7 +44,7 @@ namespace SGMed.Controllers
                 _bd.Tb_Cliente.Add(Cliente);
                 _bd.SaveChanges();
 
-                return RedirectToAction("Index"); 
+                return RedirectToAction("IndexCliente"); 
             }
             return View();
         }
