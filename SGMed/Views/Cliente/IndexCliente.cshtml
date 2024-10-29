@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<SGMed.Models.ClienteModel>
-
-@{
+   
+@{   
     ViewData["Title"] = "Cliente";
 }
 
@@ -27,6 +27,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.EnderecoCliente)
             </th>
+
+            @* <th>
+                @Html.DisplayNameFor(EmpresA => EmpresA.NomeEmpresa)
+            </th> *@
+                        
             <th></th>
         </tr>
     </thead>
@@ -45,6 +50,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EnderecoCliente)
             </td>
+               @*  <td>
+                    @Html.DisplayFor(EmpresA => item.NomeEmpresa)
+                </td> *@
             <td>
                         <a class="btn btn-warning"  asp-action="Edit" asp-route-id="@item.IdCliente"> Editar</a>
 

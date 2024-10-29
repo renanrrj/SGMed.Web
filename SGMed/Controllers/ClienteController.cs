@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SGMed.Dados;
 using SGMed.Models;
 
+
 namespace SGMed.Controllers
 {
     public class ClienteController : Controller

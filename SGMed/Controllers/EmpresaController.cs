@@ -78,7 +78,7 @@ namespace SGMed.Controllers
                 _bd.Tb_Empresa.Update(oEmpresaDb);
                 _bd.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexEmpresa");
             }
             return View();
         }
