@@ -11,5 +11,7 @@ namespace SGMed.Models
         public string NomeEmpresa { get; set; }
         public string CNPJ { get; set; }
         public string EnderecoEmpresa { get; set; }
+        //public int ClientefkID { get; set; }
+        //public ClienteModel ClientE { get; set; }
     }
 }
