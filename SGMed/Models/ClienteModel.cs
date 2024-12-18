@@ -12,10 +12,12 @@ namespace SGMed.Models
         public DateOnly DataNascimento { get; set; }
         public string CPF { get; set; }
         public string EnderecoCliente { get; set; }
-        //public EmpresaModel EmpresA { get; set; }
+
+        [ForeignKey("EmpresaModel")]
+        public int EmpresafkID { get; set; }
 
     }
 
-        
+
 
 }
